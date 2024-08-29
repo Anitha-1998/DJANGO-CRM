@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="background-color: rgb(0, 225, 255); padding: 25px;">Update record</h1>
+    
+<div class="col-md-6 offset-md-3">
+    <form method="POST" >
+        <!-- cross-site request forgery token  -->
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <br/>
+
+        <a href="{% url 'home' %}" class="btn btn-primary"> Back to Home </a> 
+
+        <button type="submit" class="btn btn-secondary">Update</button>
+               
+    </form>
+    
+</div>
+
+{% endblock %}
